@@ -31,6 +31,49 @@ body * {
 .top {
   background: purple;
   grid-column-end: span 2;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 228px 1fr 150px 1fr 228px;
+}
+
+.hearts {
+  background: yellow;
+  padding-top: 24px;
+  padding-left: 47px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.heart {
+  background: red;
+  width: 15px;
+  height: 12px;
+  margin-bottom: 4px;
+  margin-right: 1.4px;
+}
+
+.left-button {
+  align-self: end;
+  justify-self: end;
+  margin-bottom: 16px;
+  margin-right: 12px;
+}
+
+.right-button {
+  align-self: end;
+  margin-bottom: 16px;
+}
+
+.location {
+  align-self: center;
+  margin-left: 18px;
+}
+
+.rupees {
+  align-self: center;
+  justify-self: end;
+  margin-right: 60px;
 }
 
 .left {
