@@ -2,8 +2,9 @@ video {
   position: absolute;
   height: 600px;
   z-index: 10;
+  /* prevents video from being selected by devtools DOM selector */
   pointer-events: none;
-  opacity: 0;
+  opacity: 0.3;
 }
 
 body {
@@ -21,6 +22,7 @@ body * {
   right: 0;
   bottom: 0;
   left: 0;
+  /* browser creates a 1x1 grid for us */
   display: grid;
   grid-template-columns: 550px 1fr;
   grid-template-rows: 86px 1fr 58px;
@@ -62,7 +64,6 @@ body * {
 .right-button {
   align-self: end;
   margin-bottom: 16px;
-  margin-left: 20px;
 }
 
 .location {
@@ -73,10 +74,11 @@ body * {
 .rupees {
   align-self: center;
   justify-self: end;
-  margin-right: 62px;
+  margin-right: 60px;
 }
 
-/* -------------left---------------- */
+/* LEFT */
+
 .left {
   background: green;
 }
@@ -105,45 +107,47 @@ body * {
 
 .link {
   background: #fff;
-  width: 28px;
   height: 24px;
+  width: 28px;
   display: inline-block;
-}
-
-.items {
-  display: grid;
-  grid-template-columns: repeat(5, 72px);
-  grid-template-rows: repeat(4, 72px);
-  padding-left: 98px;
-  padding-top: 16px;
-  grid-gap: 10px;
 }
 
 .item {
   background: black;
 }
 
-/* -------------right---------------- */
-/* prettier-ignore */
+.items {
+  display: grid;
+  grid-template-columns: repeat(5, 72px);
+  grid-template-rows: repeat(4, 72px);
+  padding-left: 100px;
+  padding-top: 16px;
+  grid-gap: 10px;
+}
+
+/* RIGHT */
+
 .right {
   background: orangered;
   display: grid;
   position: relative;
   grid-template-rows: 155px 1fr 180px;
-  grid-template-areas: 
-    "conditions" 
-    "none" 
-    "stats";
+  /* three rows, but only two things to go in it */
+  grid-template-areas:
+  "conditions"
+  "none"
+  "stats";
 }
 
+/* setting position absolute breaks link out of the grid */
 .preview {
   background-image: url('/assets/img/link-preview.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   top: -50px;
-  left: 0;
   right: 0;
+  left: 0;
   bottom: 0;
 }
 
@@ -162,16 +166,13 @@ body * {
   z-index: 5;
 }
 
-.item-name {
-  height: 27px;
-}
-
 .info {
-  height: 24px;
+  height: 27px;
   background: orange;
 }
 
-/* -------------bottom---------------- */
+/* BOTTOM BAR */
+
 .bottom {
   background: black;
   grid-column-end: span 2;
