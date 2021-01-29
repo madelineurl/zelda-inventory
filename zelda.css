@@ -2,6 +2,7 @@ video {
   position: absolute;
   height: 600px;
   z-index: 10;
+  /* prevents video from being selected by devtools DOM selector */
   pointer-events: none;
   opacity: .3;
 }
@@ -21,6 +22,7 @@ body * {
   right: 0;
   bottom: 0;
   left: 0;
+  /* browser creates a 1x1 grid for us */
   display: grid;
   grid-template-columns: 550px 1fr;
   grid-template-rows: 86px 1fr 58px;
