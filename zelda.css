@@ -4,7 +4,7 @@ video {
   z-index: 10;
   /* prevents video from being selected by devtools DOM selector */
   pointer-events: none;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 body {
@@ -124,11 +124,66 @@ body * {
   grid-gap: 10px;
 }
 
+/* RIGHT */
+
 .right {
   background: orangered;
+  display: grid;
+  position: relative;
+  grid-template-rows: 155px 1fr 180px;
+  /* three rows, but only two things to go in it */
+  grid-template-areas:
+  "conditions"
+  "none"
+  "stats";
 }
+
+/* setting position absolute breaks link out of the grid */
+.preview {
+  background-image: url('/assets/img/link-preview.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.conditions {
+  background: lightcoral;
+}
+
+.stats {
+  background: rgba(255, 255, 255, .2);
+  grid-area: stats;
+  margin: 10px;
+  border: 1px solid #fff;
+  padding: 12px 20px;
+  margin-bottom: 36px;
+  color: #fff;
+  z-index: 5;
+}
+
+.info {
+  height: 27px;
+  background: orange;
+}
+
+/* BOTTOM BAR */
 
 .bottom {
   background: blue;
   grid-column-end: span 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 70px;
+}
+
+.action {
+  background: #ccc;
+  display: inline-block;
+  height: 20px;
+  width: 85px;
 }
